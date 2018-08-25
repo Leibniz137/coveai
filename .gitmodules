@@ -1,0 +1,3 @@
+[submodule "compute_prover/server/pequin"]
+	path = compute_prover/server/pequin
+	url = git://github.com/pepper-project/pequin
