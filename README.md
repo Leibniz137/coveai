@@ -3,44 +3,16 @@ coveai
 
 repo usage:
 
-> git submodule init
+1) run instructions from compute_prover/server/README.md
 
-> git submodule update
+3) http://localhost:3000/keygen
 
-> cd compute_prover/server/
+4) http://localhost:3000/prove
 
-> cp coveai_server.js pequin/pepper/
+5) http://localhost:3000/verify
 
-> cp includes/*.h pequin/pepper 
+4) view results in node server Console
 
-> cp -r libraries/boost pequin/pepper/
-
-> cp -r libraries/leveldb pequin/pepper/
-
-> cd pequin/thirdparty/
-
-> ./install_pepper_deps.sh
-
-> cd ../pepper/
-
-> npm install express cors 
-
-> node coveai_server.js
-
-
-unit test:
-
-Step One
-
-http://localhost:3000/keygen
-
-Step Two
-
-http://localhost:3000/prove
-
-Step Three
-
-http://localhost:3000/verify
 
 
 docker usage:
