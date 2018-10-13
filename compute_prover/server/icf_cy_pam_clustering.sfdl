@@ -2,24 +2,12 @@
  * k-medoids clustering using Partitioning Around Medoids (PAM)
  * k-medoids is more robust, but harder to compute than, k-means.
  */
-program pam_clustering {
+program icf_cy_pam_clustering {
   //Constants
-  // fails
-  //const k = 7; //Number of clusters
-  //const d = 205; //Dimensionality of datapoints
-  //const m = 23; //Number of datapoints
-  //const L = 2; //Number of times to run the swap phase (Each iteration tests (m-1)*k configurations)
-  
-  // succeeds
-  //const k = 4; //Number of clusters
-  //const d = 21; //Dimensionality of datapoints
-  //const m = 23; //Number of datapoints
-  //const L = 1; //Number of times to run the swap phase (Each iteration tests (m-1)*k configurations)
-
   const k = 7; //Number of clusters
   const d = 205; //Dimensionality of datapoints
-  const m = 23; //Number of datapoints
-  const L = 1; //Number of times to run the swap phase (Each iteration tests (m-1)*k configurations)
+  const m = 70; //Number of datapoints
+  const L = 2; //Number of times to run the swap phase (Each iteration tests (m-1)*k configurations)
 
   //types
   type iterator = int; //The type of loop iterators is ignored
