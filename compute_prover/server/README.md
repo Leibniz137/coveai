@@ -13,6 +13,8 @@ repo usage:
 
 > cp coveai_server.js pequin/pepper/
 
+> cp icf_cy_pam_clustering.sfdl pequin/pepper/apps/
+
 > cp includes/*.h pequin/pepper 
 
 > cp -r libraries/boost pequin/pepper/

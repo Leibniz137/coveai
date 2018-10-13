@@ -31,7 +31,10 @@ const math_app = 'mergesort_merkle';
 //const math_app = 'dna_align';
 
 // best real-life use case/usability combination
-const math_app = 'pam_clustering';
+//const math_app = 'pam_clustering';
+
+// best real-life use case
+const math_app = 'icf_cy_pam_clustering';
 
 const app = express();
 app.use(cors())
