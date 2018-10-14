@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const fs = require('fs');
 const { spawn } = require('child_process');
 
 /*
@@ -43,6 +44,9 @@ app.get('/keygen', (request, response) => {
   // initialization phase one: verifier compile and setup
   const verifier_setup = spawn('./pepper_compile_and_setup_V.sh', [`${math_app}`, `${math_app}.vkey`, `${math_app}.pkey`]);
   var keygen_setup_result = 0;
+
+  var fileStream = fs.createWriteStream('./output.log', {flags: 'a'});
+  verifier_setup.stdout.pipe(fileStream);
 
   verifier_setup.stdout.on('data', (data) => {
     console.log(`verifier keygen output: ${data}`);
