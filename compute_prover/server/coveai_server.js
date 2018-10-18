@@ -36,13 +36,13 @@ const math_app = 'mergesort_merkle';
 
 // best real-life use case
 const math_app = 'icf_cy_pam_clustering';
+const work_dir = 'pequin/pepper';
 
 const app = express();
 app.use(cors())
-
 app.get('/keygen', (request, response) => {
   // initialization phase one: verifier compile and setup
-  const verifier_setup = spawn('./pepper_compile_and_setup_V.sh', [`${math_app}`, `${math_app}.vkey`, `${math_app}.pkey`]);
+  const verifier_setup = spawn('./pepper_compile_and_setup_V.sh', [`${math_app}`, `${math_app}.vkey`, `${math_app}.pkey`], {cwd: `${work_dir}`});
   var keygen_setup_result = 0;
 
   var fileStream = fs.createWriteStream('./output.log', {flags: 'a'});
@@ -61,8 +61,8 @@ app.get('/keygen', (request, response) => {
   // initialization phase one complete
   verifier_setup.on('close', (code) => {
     // initialization phase two: prover compile and setup
-    const prover_setup = spawn('./pepper_compile_and_setup_P.sh', [`${math_app}`]);
-    
+    const prover_setup = spawn('./pepper_compile_and_setup_P.sh', [`${math_app}`], {cwd: `${work_dir}`});
+
     prover_setup.stdout.on('data', (data) => {
       console.log(`prover keygen output: ${data}`);
     });
@@ -75,7 +75,7 @@ app.get('/keygen', (request, response) => {
     prover_setup.on('close', (code) => {
 
       // initialization phase three: generate input
-      const input_setup = spawn(`./bin/pepper_verifier_${math_app}`, ['gen_input', `${math_app}.inputs`]);
+      const input_setup = spawn(`./bin/pepper_verifier_${math_app}`, ['gen_input', `${math_app}.inputs`], {cwd: `${work_dir}`});
 
       input_setup.stdout.on('data', (data) => {
         console.log(`input_gen keygen output: ${data}`);
@@ -100,9 +100,9 @@ app.get('/keygen', (request, response) => {
 
 app.get('/prove', (request, response) => {
 
-  const prover = spawn(`./bin/pepper_prover_${math_app}`, ['prove', `${math_app}.pkey`, `${math_app}.inputs`, `${math_app}.outputs`, `${math_app}.proof`]);
+  const prover = spawn(`./bin/pepper_prover_${math_app}`, ['prove', `${math_app}.pkey`, `${math_app}.inputs`, `${math_app}.outputs`, `${math_app}.proof`], {cwd: `${work_dir}`});
   var prover_result = 0;
-  
+
   prover.stdout.on('data', (data) => {
     console.log(`prove output: ${data}`);
     prover_result = data[0];
@@ -124,9 +124,9 @@ app.get('/prove', (request, response) => {
 
 app.get('/verify', (request, response) => {
 
-  const verifier = spawn(`./bin/pepper_verifier_${math_app}`, ['verify', `${math_app}.vkey`, `${math_app}.inputs`, `${math_app}.outputs`, `${math_app}.proof`]);
+  const verifier = spawn(`./bin/pepper_verifier_${math_app}`, ['verify', `${math_app}.vkey`, `${math_app}.inputs`, `${math_app}.outputs`, `${math_app}.proof`], {cwd: `${work_dir}`});
   var verifier_result = 0;
-  
+
   verifier.stdout.on('data', (data) => {
     console.log(`verify output: ${data}`);
     verifier_result = data[0];
@@ -147,4 +147,4 @@ app.get('/verify', (request, response) => {
 
 
 app.listen(3000, () => console.log('Listening on 3000'));
- 
+
