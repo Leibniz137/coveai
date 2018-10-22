@@ -1,38 +1,45 @@
 compute_prover
 ==============
 
-repo usage:
+### repo usage:
+```
+cd coveai/
 
-> cd coveai/
+git submodule init
+git submodule update
 
-> git submodule init
+cd compute_prover/server/
+```
 
-> git submodule update
+#### With Docker:
+```
+docker build -t coveai .
+```
 
-> cd compute_prover/server/
+#### Without Docker:
+```
+cp coveai_server.js pequin/pepper/
 
-> cp coveai_server.js pequin/pepper/
+cp icf_cy_pam_clustering.sfdl pequin/pepper/apps/
 
-> cp icf_cy_pam_clustering.sfdl pequin/pepper/apps/
+cp includes/*.h pequin/pepper
 
-> cp includes/*.h pequin/pepper 
+cp -r libraries/boost pequin/pepper/
 
-> cp -r libraries/boost pequin/pepper/
+cp -r libraries/leveldb pequin/pepper/
 
-> cp -r libraries/leveldb pequin/pepper/
+cd pequin/thirdparty/
 
-> cd pequin/thirdparty/
+./install_pepper_deps.sh
 
-> ./install_pepper_deps.sh
+cd ../pepper/
 
-> cd ../pepper/
+npm install express cors
 
-> npm install express cors 
+node coveai_server.js
+```
 
-> node coveai_server.js
-
-
-unit test:
+### unit test:
 
 Step One
 
