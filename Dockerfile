@@ -18,7 +18,7 @@ COPY includes/*.h pequin/pepper/
 COPY libraries/boost pequin/pepper/
 COPY libraries/leveldb pequin/pepper/
 
-WORKDIR /usr/local/src/pequin/thirdparty/
+WORKDIR /usr/local/src/pequin/
 RUN ./install_debian_ubuntu.sh && npm install express cors
 
 WORKDIR /usr/local/src/pequin/pepper
