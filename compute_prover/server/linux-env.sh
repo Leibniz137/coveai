@@ -8,7 +8,7 @@ apt install -y curl
 apt install -y python-minimal
 apt install -y libz-dev
 # Ubuntu 16.04 libsnark dependencies
-apt-get install build-essential \
+apt-get install -y build-essential \
   cmake \
   git \
   libgmp3-dev \
