@@ -4,9 +4,10 @@
 #   docker build -t coveai -f Dockerfile ./compute_prover/server
 
 FROM ubuntu
+COPY apt.conf /etc/apt/apt.conf.d/docker-install
 COPY linux-env.sh /tmp/
-RUN apt-get -y update \
-  && apt-get -y install sudo \
+RUN apt-get update \
+  && apt-get install sudo \
   && /tmp/linux-env.sh
 WORKDIR /usr/local/src
 COPY pequin .
