@@ -12,7 +12,7 @@ apt-get install -y build-essential \
   cmake \
   git \
   libgmp3-dev \
-  libprocps4-dev \
+  libprocps-dev \
   python-markdown \
   libboost-all-dev \
   libssl-dev
