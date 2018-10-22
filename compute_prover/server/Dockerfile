@@ -1,8 +1,3 @@
-# Steps to build:
-#   git submodule init
-#   git submodule update
-#   docker build -t coveai -f Dockerfile ./compute_prover/server
-
 FROM ubuntu
 COPY apt.conf /etc/apt/apt.conf.d/docker-install
 COPY linux-env.sh /tmp/

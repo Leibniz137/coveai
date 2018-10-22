@@ -1,54 +1,27 @@
 compute_prover
 ==============
 
-### repo usage:
+### Build:
 ```
-cd coveai/
-
 git submodule init
 git submodule update
-
-cd compute_prover/server/
-```
-
-#### With Docker:
-```
 docker build -t coveai .
 ```
 
-#### Without Docker:
-```
-cp coveai_server.js pequin/pepper/
-
-cp icf_cy_pam_clustering.sfdl pequin/pepper/apps/
-
-cp includes/*.h pequin/pepper
-
-cp -r libraries/boost pequin/pepper/
-
-cp -r libraries/leveldb pequin/pepper/
-
-cd pequin/thirdparty/
-
-./install_pepper_deps.sh
-
-cd ../pepper/
-
-npm install express cors
-
-node coveai_server.js
-```
-
-### unit test:
-
+### Test:
 Step One
-
-http://localhost:3000/keygen
+```
+docker run -p 3000 coveai
+```
 
 Step Two
 
-http://localhost:3000/prove
+http://localhost:3000/keygen
 
 Step Three
+
+http://localhost:3000/prove
+
+Step Four
 
 http://localhost:3000/verify
