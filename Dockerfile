@@ -10,7 +10,7 @@ RUN apt-get update \
   && apt-get install sudo \
   && /tmp/linux-env.sh
 WORKDIR /usr/local/src
-COPY pequin .
+COPY pequin pequin
 
 COPY coveai_server.js pequin/pepper/
 COPY icf_cy_pam_clustering.sfdl pequin/pepper/apps/
