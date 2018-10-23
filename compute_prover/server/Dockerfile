@@ -11,7 +11,7 @@ COPY run.sh .
 # to successfully install
 WORKDIR /usr/local/src/pequin/
 RUN apt-get update \
-  && apt-get install sudo \
+  && apt-get install git sudo \
   && ./install_debian_ubuntu.sh
 
 # WORKDIR /usr/local/src/pequin/pepper
