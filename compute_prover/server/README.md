@@ -1,27 +1,25 @@
 compute_prover
 ==============
 
-### Build:
+## repo usage:
+
 ```
-git submodule init
-git submodule update
-docker build -t coveai .
+git clone --recurse-submodules https://github.com/ConsenSys/coveai.git
+cd coveai/compute_prover/server/
+./build.sh
+./run.sh
 ```
 
-### Test:
-Step One
-```
-docker run -p 3000:3000 coveai
-```
+## unit test:
 
-Step Two
+### Step One
 
 http://localhost:3000/keygen
 
-Step Three
+### Step Two
 
 http://localhost:3000/prove
 
-Step Four
+### Step Three
 
 http://localhost:3000/verify
