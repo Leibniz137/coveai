@@ -19,7 +19,7 @@ RUN apt-get update \
 WORKDIR /usr/local/src/pequin/pepper
 
 # add these after RUN because they're most likely to change
-COPY coveai_server.js pequin/pepper/
+COPY coveai_server.js .
 CMD ["node", "coveai_server.js"]
 
 COPY icf_cy_pam_clustering.sfdl pequin/pepper/apps/
