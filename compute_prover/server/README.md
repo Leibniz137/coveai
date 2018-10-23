@@ -11,7 +11,7 @@ docker build -t coveai .
 ### Test:
 Step One
 ```
-docker run -p 3000 coveai
+docker run -p 3000:3000 coveai
 ```
 
 Step Two
