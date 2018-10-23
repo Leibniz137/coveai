@@ -35,7 +35,10 @@ const math_app = 'mergesort_merkle';
 //const math_app = 'pam_clustering';
 
 // best real-life use case
-const math_app = 'icf_cy_pam_clustering';
+var args = process.argv.slice(2);
+if (args[0]) math_app = args[0];
+else         math_app = 'icf_cy_pam_clustering';
+
 const work_dir = 'pequin/pepper';
 
 const app = express();
