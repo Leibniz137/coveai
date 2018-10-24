@@ -24,4 +24,4 @@ WORKDIR /usr/local/src
 COPY icf_cy_pam_clustering.sfdl ./pequin/pepper/apps/
 COPY icf_cy_pam_clustering_v_inp_gen.h ./pequin/pepper/apps/
 COPY coveai_server.js .
-CMD ["node", "coveai_server.js"]
+CMD ["./run.sh"]
