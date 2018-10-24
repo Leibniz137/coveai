@@ -10,3 +10,5 @@ COPY coveai_server.js .
 COPY run.sh .
 CMD ["./run.sh"]
 ENV DOCKER true
+COPY includes ./pepper_deps/include
+COPY libraries/leveldb ./pepper_deps/include/leveldb
