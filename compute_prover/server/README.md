@@ -6,8 +6,15 @@ compute_prover
 ```
 git clone --recurse-submodules https://github.com/ConsenSys/coveai.git
 cd coveai/compute_prover/server/
+
+# native:
 ./build.sh
 ./run.sh
+
+# with docker:
+docker build -t pequin-pepper -f pequin.Dockerfile .
+docker build -t coveai .
+docker run --rm -p 3000:3000 coveai
 ```
 
 ## unit test:
