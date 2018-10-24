@@ -9,3 +9,4 @@ COPY icf_cy_pam_clustering_v_inp_gen.h ./pequin/pepper/apps/
 COPY coveai_server.js .
 COPY run.sh .
 CMD ["./run.sh"]
+ENV DOCKER true

@@ -8,10 +8,13 @@ trap on_exit INT
 
 # clean submodule
 function on_exit() {
-  cd pequin/pepper && \
-  git reset --hard && \
-  git clean -x -f -d
-  exit $?
+  # no need to clean and no git repo either (which causes error)
+  if [ -z ${DOCKER+x} ]; then
+    cd pequin/pepper && \
+    git reset --hard && \
+    git clean -x -f -d
+    exit $?
+  fi
 }
 
 # enable precedence of environment variables
