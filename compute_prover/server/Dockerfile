@@ -1,4 +1,4 @@
-FROM pequin-pepper
+FROM thenateway/pequin-pepper:bf546c9d9de3e5f2c5b7d2e139b9459ad88a1c38
 
 RUN apt-get install npm
 WORKDIR /usr/local/src
