@@ -12,7 +12,6 @@ cd coveai/compute_prover/server/
 ./run.sh
 
 # with docker:
-docker build -t pequin-pepper -f pequin.Dockerfile .
 docker build -t coveai .
 docker run --rm -p 3000:3000 coveai
 ```
