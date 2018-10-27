@@ -8,7 +8,8 @@ trap on_exit INT
 
 # clean submodule
 function on_exit() {
-  # no need to clean and no git repo either (which causes error)
+  # noop because no need to clean and no git repo either (which causes error)
+  # NOTE: conditional only checks if variable set (not if "no" or false)
   if [ -z ${DOCKER+x} ]; then
     cd pequin/pepper && \
     git reset --hard && \
@@ -28,4 +29,3 @@ fi
 DEPSDIR="$(pwd)/pepper_deps" node coveai_server.js "${verified_app%.*}"
 
 on_exit
-
