@@ -1,0 +1,3 @@
+node_modules/
+pepper_deps
+*.log

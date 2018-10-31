@@ -1,47 +1,25 @@
 compute_prover
 ==============
 
-repo usage:
+## repo usage:
 
-> cd coveai/
+```
+git clone --recurse-submodules https://github.com/ConsenSys/coveai.git
+cd coveai/compute_prover/server/
+./build.sh
+./run.sh
+```
 
-> git submodule init
+## unit test:
 
-> git submodule update
-
-> cd compute_prover/server/
-
-> cp coveai_server.js pequin/pepper/
-
-> cp icf_cy_pam_clustering.sfdl pequin/pepper/apps/
-
-> cp includes/*.h pequin/pepper 
-
-> cp -r libraries/boost pequin/pepper/
-
-> cp -r libraries/leveldb pequin/pepper/
-
-> cd pequin/thirdparty/
-
-> ./install_pepper_deps.sh
-
-> cd ../pepper/
-
-> npm install express cors 
-
-> node coveai_server.js
-
-
-unit test:
-
-Step One
+### Step One
 
 http://localhost:3000/keygen
 
-Step Two
+### Step Two
 
 http://localhost:3000/prove
 
-Step Three
+### Step Three
 
 http://localhost:3000/verify

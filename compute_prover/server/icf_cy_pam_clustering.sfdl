@@ -4,12 +4,19 @@
  */
 program icf_cy_pam_clustering {
   //Constants
-  const k = 7; //Number of clusters
-  const d = 205; //Dimensionality of datapoints
-  const m = 70; //Number of datapoints
-  const L = 2; //Number of times to run the swap phase (Each iteration tests (m-1)*k configurations)
 
-  //types
+  // target
+  //const k = 7; //Number of clusters
+  //const d = 205; //Dimensionality of datapoints
+  //const m = 70; //Number of datapoints
+  //const L = 2; //Number of times to run the swap phase (Each iteration tests (m-1)*k configurations)
+
+  // successfully assembles circuit & params
+  const k = 5; //Number of clusters
+  const d = 86; //Dimensionality of datapoints
+  const m = 30; //Number of datapoints
+  const L = 3; //Number of times to run the swap phase (Each iteration tests (m-1)*k configurations)
+
   type iterator = int; //The type of loop iterators is ignored
 
   //Input - An m by d matrix A, such that A[i][j] is the j-th coordinate 
