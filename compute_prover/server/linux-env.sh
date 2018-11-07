@@ -4,16 +4,7 @@ sudo apt dist-upgrade
 sudo apt install python-minimal
 sudo apt install libz-dev
 # Ubuntu 16.04 libsnark dependencies
-sudo apt-get install \
-  build-essential \
-  cmake \
-  curl \
-  git \
-  libgmp3-dev \
-  libprocps-dev \
-  python-markdown \
-  libboost-all-dev \
-  libssl-dev
+sudo apt-get install build-essential cmake git libgmp3-dev libprocps4-dev python-markdown libboost-all-dev libssl-dev
 sudo apt install pkg-config
 # node package manager
 sudo apt install npm
